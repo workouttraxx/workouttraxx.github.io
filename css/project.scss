@@ -1,0 +1,210 @@
+/*
+// declaration order
+.selector {
+  *//* Positioning *//*
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  *//* Display & Box Model *//*
+  display: inline-block;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid #333;
+  margin: 10px;
+
+  *//* Other *//*
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: right;
+}*/
+$font1 : "proxima-nova"; // 100, 300 //headers
+$font2 : "nimbus-sans"; // 400, 700 // body
+$font3 : "atrament-web"; // 600 // banner headers
+
+
+//@font-face {
+//  font-family: 'nationalyzealp';
+//  src: url('/fonts/nationalyze-alp-webfont.eot');
+//  src: url('/fonts/nationalyze-alp-webfont.eot?#iefix') format('embedded-opentype'),
+//  url('/fonts/nationalyze-alp-webfont.woff2') format('woff2'),
+//  url('/fonts/nationalyze-alp-webfont.woff') format('woff'),
+//  url('/fonts/nationalyze-alp-webfont.ttf') format('truetype'),
+//  url('/fonts/nationalyze-alp-webfont.svg#nationalyzealp') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+
+/* organisatie kleuren */
+$projectcolor1 : rgba(255,255,255,1); // bodytekst
+$projectcolor2 : rgba(239,129,0,1); // workouttraxx oranje
+$projectcolor3 : rgba(0,125,127,1); // workouttraxx groen
+$projectcolor4 : rgba(117,118,94,1); // faq button, footerbuttons
+$projectcolor5 : rgba(48,48,48,1); // grijs, back nav, back tel
+$projectcolor6 : rgba(59,57,51,1); // grijs onder paginatekst
+$projectcolor7 : rgba(64,64,64,1); // grijs, back mailbutton
+$projectcolor8 : rgba(131,131,131,1); // chat button
+$projectcolor9 : rgba(255,116,0,1); // workouttraxx donker oranje
+
+
+/* diverse standaards */
+$def-radius             : 14px; // default afronding van elementen
+$def-tpadding           : 25px; // default top padding
+$def-bpadding           : 25px; // default bottom padding
+$def-vpadding           : 25px; // default vertical padding
+$def-lpadding           : 20px; // default left padding
+$def-rpadding           : 20px; // default right padding
+$def-hpadding           : 20px; // default horizontal padding
+$def-tmargin            : 20px; // default top margin
+$def-bmargin            : 20px; // default bottom margin
+
+/* body */
+$body-fontsize        : 18px;
+$body-fontweight      : 400;
+$body-lineheight      : 1.4em;
+$body-bgcolor         : rgb(255,255,255);
+$body-fontcolor       : $projectcolor1;
+$body-fontfamily      : $font2;
+$body-linkcolor       : $projectcolor1;
+
+/* nav-top */ /* in witte balk */
+$navtopitem-fontcolor : White;
+$navtopitem-active-fontcolor : White;
+$navtopitem-fontfamily: $font1;
+$navtopitem-fontsize  : 20px;
+$navtopitem-fontweight: 400;
+$navtopitem-padding   : 0px 25px 0px 25px;
+
+/* submenu */ /* in witte balk */
+$submenuitem-fontcolor : Black;
+$submenuitem-active-fontcolor : $projectcolor1;
+$submenuitem-fontfamily: $font1;
+$submenuitem-fontsize  : 14px;
+$submenuitem-fontweight: bold;
+
+/* hero */
+$heroheight : 500px;
+
+/* paragraph */
+$p-margin-bottom      : 20px;
+$p-fontcolor          : $body-fontcolor;
+$p-fontfamily         : $body-fontfamily;
+$p-fontsize           : $body-fontsize;
+$p-fontsize-xs        : $body-fontsize;
+$p-fontsize-sm        : $body-fontsize;
+$p-fontsize-md        : $body-fontsize;
+$p-lineheight         : $body-lineheight;
+
+/* type headers */
+$h1-fontsize          : 36px;
+$h1-fontsize-xs       : 28px;
+$h1-fontsize-sm       : 36px;
+$h1-fontsize-md       : 36px;
+$h1-fontcolor         : White;
+$h1-fontfamily        : $font1;
+$h1-fontweight        : 300;
+$h1-lineheight        : 1.1;
+$h1-padding-bottom    : 0px;
+$h1-margin-top        : 0px;
+$h1-margin-bottom     : 18px;
+$h1-background        : null !global;
+//$h1-background      : #ffffff url("/images/h-back.png") repeat-x left bottom;
+
+$h2-fontsize          : 36px;
+$h2-fontsize-xs       : 22px;
+$h2-fontsize-sm       : 36px;
+$h2-fontsize-md       : 36px;
+$h2-fontcolor         : White;
+$h2-fontfamily        : $font1;
+$h2-fontweight        : 300;
+$h2-lineheight        : 1.0;
+$h2-padding-bottom    : 0px;
+$h2-margin-top        : 0px;
+$h2-margin-bottom     : 10px;
+$h2-background        : null !global;
+//$h2-background  : #ffffff url("/images/h-back.png") repeat-x left bottom;
+
+$h3-fontsize          : 20px;
+$h3-fontsize-xs       : 20px;
+$h3-fontsize-sm       : 20px;
+$h3-fontsize-md       : 20px;
+$h3-fontcolor         : White;
+$h3-fontfamily        : $font1;
+$h3-fontweight        : 100;
+$h3-lineheight        : 1.1;
+$h3-padding-bottom    : 3px;
+$h3-margin-top        : 0px;
+$h3-margin-bottom     : 0px;
+$h3-background        : null !global;
+//$h3-background      : #ffffff url("/images/h-back.png") repeat-x left bottom;
+
+/* kaders */
+$kader-width          : 300px;
+$kader-padding        : 20px 20px 20px 20px;
+$kader-border         : 0px solid rgb(126,126,126);
+$kader-margin         : 0 0 1px 0;
+$kader-fontcolor      : $body-fontcolor;
+$kader-fontfamily     : inherit;
+$kader-fontsize       : inherit;
+$kader-bgcolor        : rgba(0,0,0,0.5);
+
+/* links */
+
+/* footer */
+$footer-width         : 100%;
+$footer-height        : 198px;
+$footer-padding       : 0px 0px 0px 0px;
+$footer-margin        : 0px 0px 0px 0px;
+$footer-fontcolor     : rgba(255,255,255,1);
+$footer-fontfamily    : $body-fontfamily;
+$footer-fontsize      : 13px;
+//$footer-background    : transparent url("/images/back-footer.png") repeat-x left top;
+
+$footercol-width      : 300px;
+$footercol-height     : 198px;
+$footercol-float      : left;
+$footercol-padding    : 40px 40px 40px 40px;
+$footercol-margin     : 0px 0px 0px 0px;
+$footercol-fontcolor  : $footer-fontcolor;
+$footercol-fontfamily : $footer-fontfamily;
+$footercol-fontsize   : $footer-fontsize;
+//$footercol-background : transparent url("/images/footer-col-seperator.png") no-repeat right top;
+$footercol-background : transparent none no-repeat right top;
+
+/* lists */
+$list-paddingtop        : 0px !global;
+$list-paddingbottom     : 20px !global;
+$list-paddingleft       : 0px !global;
+$list-marginbottom      : 10px;
+$list-marginleft        : 0px;
+$list-style-type-ol     : decimal;
+$list-style-type-ul     : disc;
+
+/* listitems */
+$listitem-color         : $body-fontcolor;
+$listitem-fontfamily    : $body-fontfamily;
+$listitem-fontsize      : $body-fontsize;
+$listitem-lineheight    : $body-lineheight;
+$listitem-marginleft    : 22px;
+$listitem-paddingleft   : 0px;
+
+/* buttons <button>  @include button (); */
+$button-width           : null !global;
+$button-height          : null !global;
+$button-border          : 0px;
+$button-bgcolor         : transparent;
+$button-background      : none;
+$button-fontcolor       : White;
+$button-fontfamily      : $body-fontfamily;
+$button-fontsize        : 17px;
+$button-fontweight      : 700;
+

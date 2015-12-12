@@ -1,0 +1,732 @@
+@import 'base';
+
+html, body {height:100%;}
+
+/* counter reset.css */
+strong {font-weight : bold;}
+em {font-style: italic;}
+img {display: block;}
+
+/* defaults */
+html {
+  padding: 0px;
+  margin: 0px;
+}
+@media (max-width: 480px) {
+  body {
+    @include backgroundimg (
+    $img:'/images/background-xs.jpg', // waarde is verplicht
+    $img-valign: top 60px, // 10px, top
+    $img-halign:center, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+}
+@media (min-width: 480px) {
+  body {
+    @include backgroundimg (
+    $img:'/images/background.jpg', // waarde is verplicht
+    $img-valign: top 60px, // 10px, top
+    $img-halign:center, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+}
+body {
+  background-color: $body-bgcolor;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.wrapper {
+  background-color: transparent;
+  width: 100%;
+  height: 101%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  margin: 0px;
+}
+div, span, section, p, a, td {
+  background-repeat: no-repeat;
+  @include box();
+}
+table {
+  border-collapse: collapse;
+  td {
+    padding: 0px;
+    vertical-align: top;
+  }
+}
+ol {
+  //@include ol();
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+
+}
+ul {
+  //@include ul(); // gaat fout met revolution slider
+}
+a {
+  word-wrap: break-word;
+}
+a:hover {
+  text-decoration: none;
+}
+div.container-fluid, article, div.tp-banner-container {
+  padding:0px;
+}
+
+.nohpadding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+h1 {
+  @include h1();
+  @media (max-width: 480px) {
+    font-size: $h1-fontsize-xs;
+    padding-top: 20px;
+  }
+  @media (min-width: 480px) and (max-width: 768px) {font-size: $h1-fontsize-sm}
+  @media (min-width: 768px) and (max-width: 1200px) {font-size: $h1-fontsize-md}
+  @media (min-width: 1200px) {font-size: $h1-fontsize}
+}
+h2 {
+  @include h2();
+  @media (max-width: 480px) {font-size: $h2-fontsize-xs}
+  @media (min-width: 480px) and (max-width: 768px) {font-size: $h2-fontsize-sm}
+  @media (min-width: 768px) and (max-width: 1200px) {font-size: $h2-fontsize-md}
+  @media (min-width: 1200px) {font-size: $h2-fontsize}
+}
+h3 {
+  @include h3();
+  @media (max-width: 480px) {font-size: $h2-fontsize-xs}
+  @media (min-width: 480px) and (max-width: 768px) {font-size: $h2-fontsize-sm}
+  @media (min-width: 768px) and (max-width: 1200px) {font-size: $h2-fontsize-md}
+  @media (min-width: 1200px) {font-size: $h2-fontsize}
+}
+p {
+  @include p();
+  @media (max-width: 480px) {font-size: $p-fontsize-xs}
+  @media (min-width: 480px) and (max-width: 768px) {font-size: $p-fontsize-sm}
+  @media (min-width: 768px) and (max-width: 1200px) {font-size: $p-fontsize-md}
+  @media (min-width: 1200px) {font-size: $p-fontsize}
+}
+
+// nav
+div.nav {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 70px;
+  background-color: $projectcolor5;
+  border-bottom: 3px solid Black;
+  overflow: hidden;
+  display: block;
+  div.row {
+    height: 67px;
+    line-height: 67px;
+    a {
+      height: 67px;
+      display: inline-block;
+    }
+  }
+  .home {
+    width: 10%;
+    text-align: center;
+    padding-top: 9px;
+    float: left;
+  }
+  .language {
+    width: 10%;
+    color : White;
+    text-align: center;
+    float: left;
+    a {
+      color: White;
+    }
+  }
+
+  .workoutsignup {
+    background-color: $projectcolor3;
+    width: 35%;
+    float: left;
+    @include backgroundimg (
+    $img:'/images/nav/back_signup.png', // waarde is verplicht
+    $img-valign: top, // 10px, top
+    $img-halign:left, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+  .subscribe {
+    float: left;
+    background-color: $projectcolor2;
+    width: 35%;
+    @include backgroundimg (
+    $img:'/images/nav/back_subscribe.png', // waarde is verplicht
+    $img-valign: top, // 10px, top
+    $img-halign:left, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+
+  .contact {
+    width: 10%;
+    color : White;
+    text-align: center;
+    float: left;
+  }
+}
+
+
+
+div.topnav-xs {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  .logo-xs {
+    border-bottom: 1px solid White;
+  }
+  .navitem-xs {
+    a {
+      height: 60px;
+      display: block;
+      text-align: center;
+      span {
+        display: inline-block;
+        padding-top: 13px;
+        line-height: 16px;
+        color: White;
+        font-weight: bold;
+      }
+    }
+  }
+  .signup {
+    background-color: $projectcolor3;
+  }
+  .register {
+    background-color: $projectcolor2;
+  }
+}
+div.logo {
+    height: 65px;
+}
+div.pc2 {
+  background-color: $projectcolor2;
+  h1 {
+    color: White;
+
+  }
+}
+div.demi-pc2 {
+  text-align: center;
+  @include backgroundimg (
+  $img:'/images/highlights/background.png', // waarde is verplicht
+  $img-valign: bottom -1px, // 10px, top
+  $img-halign:left, // 10px, left
+  $img-size:null, // null, cover, contain
+  $img-repeat:x // x, y, xy
+  );
+  img {
+    display: inline-block;
+  }
+}
+div.tp-banner-container {
+  margin-bottom: 0;
+  overflow: hidden;
+  div.tp-banner-container div.txt_on_back01 {
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    display: block;
+    text-align: center;
+    font-family: "proxima-nova";
+    font-weight: 300;
+    font-size: 72px !important;
+    @include backgroundimg (
+    $img:'/images/slides/txt_on_back01.png', // waarde is verplicht
+    $img-valign: top, // 10px, top
+    $img-halign:left, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+
+  div.banner-headertxt01 {
+    color: White;
+    font-family: $font3;
+    font-weight: 600;
+    font-size: 70px !important;
+  }
+  div.banner-headertxt02 {
+    color: $projectcolor2;
+    font-family: $font3;
+    font-weight: 600;
+    font-size: 90px !important;
+  }
+
+}
+div.intro-xs {
+  display: block;
+  background-color: #fff;
+}
+div.content {
+  @include backgroundimg (
+  $img:'/images/pages/back_content.png', // waarde is verplicht
+  $img-valign: null, // 10px, top
+  $img-halign:left, // 10px, left
+  $img-size:null, // null, cover, contain
+  $img-repeat:x // x, y, xy
+  );
+  div.contenttxt {
+    > div {
+      ul {
+        margin: 0px;
+        padding-bottom: 20px;
+        li {
+          font-family: $font2;
+          font-size: $body-fontsize;
+          color: $body-fontcolor;
+        }
+      }
+      padding-bottom: 20px;
+      p {
+
+      }
+      a {
+        color: White;
+        text-decoration: none;
+
+      }
+    }
+    h2 {
+      font-size: 24px;
+      color: $projectcolor6;
+      font-weight: bold;
+    }
+    a {
+      color: White;
+    }
+    #accordion1,#accordion2 {
+      h3 {
+        cursor: pointer;
+        font-size: 18px;
+        color: $projectcolor6;
+        font-weight: bold;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        @include backgroundimg (
+        $img:'/lib/images/henkert-dot-2px-darkgrey.png', // waarde is verplicht
+        $img-valign: bottom, // 10px, top
+        $img-halign:left, // 10px, left
+        $img-size:null, // null, cover, contain
+        $img-repeat:x // x, y, xy
+        );
+        outline: none;
+      }
+      div {
+        p {
+          color: $body-fontcolor;
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    div.contenttxt {
+      background-color: $projectcolor2;
+      @include backgroundimg (
+      $img:'/images/pages/back_content.png', // waarde is verplicht
+      $img-valign: bottom, // 10px, top
+      $img-halign:left, // 10px, left
+      $img-size:null, // null, cover, contain
+      $img-repeat:x // x, y, xy
+      );
+    }
+  }
+}
+// social media row
+div.social-showme {
+  width: 100%;
+  height: 90px;
+  background-color: $projectcolor6;
+  a.sharehitter {
+    display: inline-block;
+    float: left;
+  }
+  div.shareicons {
+    display: inline-block;
+    float:left;
+    div.sharethanx {
+      color: White;
+      padding: 8px 0 8px 15px;
+    }
+    div.icons {
+      padding-left: 15px;
+    }
+    @media (max-width: 480px) {
+      div.sharethanx {
+        padding: 8px 0 8px 5px;
+      }
+      div.icons {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  }
+  div.showme {
+    padding: 0px;
+    height: 90px;
+    float:right;
+    background-color: $projectcolor3;
+    line-height: 90px;
+    color: White;
+    font-size: 30px;
+    font-family: $font1;
+    text-transform: uppercase;
+    @include backgroundimg (
+    $img:'/images/nav/arrow.png', // waarde is verplicht
+    $img-valign: center, // 10px, top
+    $img-halign:right 10px, // 10px, left
+    $img-size:null, // null, cover, contain
+    $img-repeat:null // x, y, xy
+    );
+  }
+  a {
+    display: block;
+    color: White;
+    margin: 0px;
+    padding-left: 30px; padding-right: 50px;
+  }
+}
+
+
+
+// share social show me
+a.sharehitter {
+
+}
+div.heightener {
+//  display: block;
+//  height: 600px !important;
+//  background: transparent;
+}
+
+div.extrascrollspace {
+  height: 1200px;
+}
+div.social-showme-container {
+  color: White;
+  background-color: $projectcolor6;
+  height: 90px;
+  div.sharethanx {
+    color: White;
+    padding: 8px 0 8px 15px;
+  }
+  div.icons {
+    padding-left: 15px;
+  }
+}
+div.footerbuttons {
+  padding-top: 45px;
+  padding-right: 0px;
+  a {
+    font-family: $font1;
+    font-weight: 300;
+    font-size: 26px;
+    background-color: $projectcolor4;
+    width: 50%;
+    border-right: 1px solid transparent;
+    float:left;
+    margin-bottom: 15px;
+    color: White;
+    padding: 5px 10px;
+  }
+  a:nth-of-type(1) {
+    border-right: 1px solid $projectcolor6;
+  }
+}
+
+div.package {
+  @include backgroundimg2 (
+  $img1:'/images/packages/back-package.png', // waarde is verplicht
+  $img2:'/images/packages/back-package-order.png', // waarde is verplicht
+  $img1-valign:$img1-valign, // 10px, top
+  $img1-halign:$img1-halign, // 10px, left
+  $img1-repeat:x, // x, y, xy
+  $img2-valign:$img2-valign, // 10px, top
+  $img2-halign:$img2-halign, // 10px, left
+  $img2-repeat:x // x, y, xy
+  );
+
+
+  border: 1px solid White;
+  @include fullrounded();
+  padding: 12px;
+  padding-bottom: 0px;
+  background-color: $projectcolor8;
+
+  h2 {
+    font-family: $font1;
+    font-size: 24px;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+    color: $projectcolor5;
+    font-weight: 700;
+  }
+  h2 span.small {
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+  .order {
+
+    color: White;
+    display: block;
+    font-family: $font1;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 3px 0 7px 60px;
+    text-transform: uppercase;
+  }
+}
+li {
+  color: White;
+  font-size: 16px;
+  span.dark {
+    color: $projectcolor6;
+    font-weight: bold;
+  }
+}
+
+
+// contact
+img.contacticon {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+span.contacttxt {
+  color: White;
+  width: 100%;
+  display: block;
+  height: 50px;
+  float: left;
+  line-height: 50px;
+  margin-bottom: 5px;
+  a {
+    display: block;
+  }
+}
+
+// phone
+div.phone {
+  width: 369px;
+  height: 760px;
+  padding-top: 112px;
+  padding-left: 31px;
+  @include backgroundimg (
+  $img:'/images/phone1.png', // waarde is verplicht
+  $img-valign: top, // 10px, top
+  $img-halign:left, // 10px, left
+  $img-size:null, // null, cover, contain
+  $img-repeat:null // x, y, xy
+  );
+
+}
+
+@media (max-width: 480px) {
+  ul {
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+}
+
+div.payment {
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .logo {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  padding-top: 110px;
+  @media (max-width: 480px) {
+    padding-top: 140px;
+  }
+  .flag {
+    display: inline-block;
+    float: right;
+    margin-left: 15px;
+  }
+  a {
+    color: White;
+    text-decoration: underline;
+  }
+  .tip {
+    color: $projectcolor5;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  div.english, div.dutch {
+    div {
+      @include fullrounded();
+      padding: $def-vpadding $def-hpadding;
+      background-color: $projectcolor2;
+      margin-bottom: 10px;
+    }
+  }
+  div.dutch {
+    div {
+      background-color: $projectcolor6;
+      .tip {
+        color: $projectcolor2;
+      }
+    }
+  }
+}
+// paymentcompleted
+a.startplanning {
+  text-decoration: none !important;
+  @include fullrounded();
+  float:right;
+  display: inline-block;
+  border: 1px solid White;
+  background-color: $projectcolor3;
+  color: White;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  padding-left : 20px;
+  padding-right : 50px;
+  text-transform: uppercase;
+  @include backgroundimg (
+  $img:'/images/nav/arrow.png', // waarde is verplicht
+  $img-valign: center, // 10px, top
+  $img-halign:right 10px, // 10px, left
+  $img-size:null, // null, cover, contain
+  $img-repeat:null // x, y, xy
+  );
+
+}
+@media (max-width: 480px) {
+  .payment {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  a.startplanning {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    height: 50px;
+    margin-left: 0px;
+    line-height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 45px;
+  }
+}
+
+// animate
+#topnav {
+  display: block;
+}
+#topnav.open-add {
+  transition: padding 350ms linear;
+}
+#topnav.open-add-active, #topnav.open {
+  padding-left: 300px;
+}
+
+// video
+div.video {
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+// in slider
+.videoclick {
+  cursor: pointer;
+}
+
+// features
+div.feature {
+  margin-bottom: 30px;
+  background-color: $projectcolor5;
+  -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;
+  padding-bottom: 0px !important;
+  text-align: right;
+  a.media {
+    display: inline-block;
+    color: White;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+    line-height: 30px;
+  }
+  span.media {
+    display: inline-block;
+    background-color: $projectcolor5;
+    color: $projectcolor5 !important;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+    line-height: 30px;
+
+  }
+  span.titel {
+    color: White;
+    display: block;
+    font-size: 20px;
+    font-family: $font1;
+    padding: 15px;
+    line-height: 22px;
+    text-align: left;
+    span.nieuw {
+      color: $projectcolor2;
+    }
+  }
+  @media  (min-width: 768px)  {
+    span.titel {
+      //min-height: 65px;
+    }
+  }
+  .description {
+    text-align: left;
+    padding: 25px;
+    background-color: #fff;
+    color: $projectcolor5;
+
+  }
+  @media  (min-width: 768px)  {
+    .description {
+      min-height: 170px;
+
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<div class="container-fluid demi-pc2 grungecircles hidden-xs hidden-sm">
+	<div class="container">
+		<div class="col-md-12">
+			<a id="grungecircle1" class="hitter" data-scrolltarget="grungecircle1" data-scrolloffsett="170" href="#/features"><img src="/images/highlights/features.png"></a>
+			<a id="grungecircle2" class="hitter" data-scrolltarget="grungecircle2" data-scrolloffsett="170" href="#/fastsignup"><img src="/images/highlights/7secondssignup.png"></a>
+			<a id="grungecircle3" class="hitter" data-scrolltarget="grungecircle3" data-scrolloffsett="170" href="#/easyscheduling"><img src="/images/highlights/easyscheduling.png"></a>
+			<a id="grungecircle4" class="hitter" data-scrolltarget="grungecircle4" data-scrolloffsett="170" href="#/demo"><img src="/images/highlights/demo.png"></a>
+		</div>
+	</div>
+</div>
+<div class="container-fluid hidden-md hidden-lg nohpadding intro-xs">
+	<div class="container nohpadding">
+		<div class="col-xs-12 nohpadding">
+			<img class="img-responsive" src="/images/heroimg-xs.jpg">
+		</div>
+	</div>
+</div>
+<div class="container-fluid content">
+	<div class="container">
+		<div class="col-md-7 contenttxt">
+			<div>
+				<h1>Contact</h1>
+				<p>Wij zijn te bereiken via telefoonnummer: 038 454 01 40, per <a onfocus="this.blur();" href="mailto:info@workouttraxx.com">e-mail</a> en social media.</p>
+
+				<span class="contacttxt"><img src="/images/icons/mail.png" class="contacticon"><a onfocus="this.blur();" href="mailto:info@workouttraxx.com">info@workouttraxx.com</a></span>
+
+
+				<span class="contacttxt"><img src="/images/icons/skype.png" class="contacticon">Workouttraxx</span>
+
+				<span class="contacttxt"><img src="/images/icons/twitter.png" class="contacticon"><a onfocus="this.blur();" href="https://twitter.com/workouttraxx" target="_blank">twitter.com/workouttraxx</a></span>
+
+				<span class="contacttxt"><img src="/images/icons/vimeo.png" class="contacticon"><a onfocus="this.blur();" href="https://vimeo.com/workouttraxx" target="_blank">vimeo.com/workouttraxx</a></span>
+
+
+				<span class="contacttxt"><img src="/images/icons/facebook.png" class="contacticon"><a onfocus="this.blur();" href="https://facebook.com/workouttraxx" target="_blank">facebook.com/workouttraxx</a></span>
+				<div style="clear:both"></div>
+
+
+
+			</div>
+			<div class="social-showme">
+				<div class="shareicons">
+					<div class="sharethanx">Delen? Graag!</div>
+					<div class="icons">
+						<span class='st_sharethis_large' displayText='ShareThis'></span>
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_twitter_large' displayText='Tweet'></span>
+						<span class='st_linkedin_large' displayText='LinkedIn'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_pinterest_large' displayText='Pinterest'></span>
+						<span class='st_email_large' displayText='Email'></span></div>
+				</div>
+				<a style="display: none;" class="showme hitter hidden-xs hidden-sm" data-scrolltarget="phone" data-scrolloffsett="120" href="">Let's see</a>
+			</div>
+			<div id="footerbuttons" class="footerbuttons hidden-xs hidden-sm">
+				<a href="#/faq" class="hitter" data-scrolltarget="grungecircle1" data-scrolloffsett="170">FAQ</a>
+				<a href="#/contact" class="hitter" data-scrolltarget="grungecircle1" data-scrolloffsett="170">CONTACT</a>
+			</div>
+		</div>
+		<div id="phone" class="col-md-4 offset1">
+			<!--<img src="/images/phone1.png">-->
+		</div>
+	</div>
+</div>
+<div class="footerbuttons footerbuttons-xs visible-xs visible-sm">
+	<a href="#/faq" class="hitter" data-scrolltarget="grungecircle1" data-scrolloffsett="170">FAQ</a>
+	<a href="#/contact" class="hitter" data-scrolltarget="grungecircle1" data-scrolloffsett="170">CONTACT</a>
+</div>
+<div class="container-fluid extrascrollspace hidden-xs hidden-sm"></div>
+<script>
+	// set grijze balk achter Showme knop
+	var p = $( "div.social-showme" );
+	var position = p.position();
+	var imageposition = (1000 - position.top);
+	$('.content').css({
+		"background-position": "left -"+imageposition+"px"
+	})
+
+	if($('.topnav-xs').is(':visible')) {
+		$('.intro-xs').css({
+			"margin-top":topnavxsHeight
+		})
+		// do some stuff
+	}
+</script>

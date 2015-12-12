@@ -1,0 +1,232 @@
+.profForm {
+    max-width: 600px;
+}
+.profForm * {
+  box-sizing: border-box;
+}
+.profForm h2 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profForm h3 {
+  font-size: 18px;
+  margin: 35px 0;
+  color: #000;
+  width: 100%;
+  display: inline-block;
+}
+.profForm span.bold {
+  font-weight: 600 !important;
+}
+.profForm select {
+  background: #CCCCCC;
+  color: #6A6A6A;
+  border: none;
+  min-width: 66%;
+  outline: none;
+  height: 40px;
+}
+.profForm hr {
+  border: none;
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  margin-top: 20px;
+}
+.profForm .required {
+  text-align: right;
+  color: #fff;
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.profForm .form-container {
+  padding: 0px;
+  display: inline-block;
+  width: 100%;
+}
+.profForm .form-container p {
+  font-weight: 300;
+  font-size: 16px;
+  display: inline-block;
+}
+.profForm .form-container .textareaDiscription {
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+.profForm .form-container .star {
+  color: #fff;
+}
+.profForm .form-container .col-2 {
+  width: auto !important;
+  min-width: 34%;
+  float: left;
+}
+.profForm .form-container .col-3 {
+  width: 33.3333333% !important;
+  float: left;
+}
+.profForm .form-container .col-3 .date-picker {
+  width: 60%;
+}
+.profForm .form-container .col-3 .form-wrapper {
+  height: 36px;
+  display: block;
+}
+.profForm .form-container .col-3 .form-checkbox {
+  margin-top: 5px;
+}
+.profForm .form-container .col-3.checkbox-container {
+  width: 27% !important;
+}
+.profForm .form-container .col-3.score-container {
+  width: 39.6% !important;
+}
+.profForm .form-container .col-3.score-container span {
+  text-align: right;
+  width: 52%;
+}
+.profForm .form-container .col-3.score-container input {
+  width: 45% !important;
+}
+.profForm .form-container .col-3.datum-container span {
+  width: 21%;
+}
+.profForm .form-container .col-3-other-container {
+  width: 66% !important;
+  float: right;
+}
+.profForm .form-container .col-3-other-container input {
+  width: 100% !important;
+}
+.profForm .form-container .textarea-right {
+  width: 66%;
+  float: right;
+  height: 70px;
+  resize: none;
+  display: block;
+}
+.profForm .form-container textarea {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+    border: 0px;
+    padding-left: 15px;
+    padding-top: 7px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+}
+.profForm .form-container .date-picker {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+}
+.profForm .form-container .date-picker .date-input {
+  width: 100% !important;
+}
+.profForm .form-container .bootstrap-datetimepicker-widget {
+  z-index: 999;
+}
+.profForm .form-container .form-wrapper {
+  width: 100%;
+  display: inline-block;
+  margin-top: 5px;
+}
+.profForm .form-container .form-wrapper span {
+  float: left;
+  width: 34%;
+  font-weight: 300;
+  height: 36px;
+  line-height: 36px;
+    background-color: #007d7f;
+    padding-left: 15px;
+    color:White;
+}
+.profForm .form-container .form-wrapper input[type="text"] {
+  float: right;
+  width: 66%;
+  outline: none;
+  padding: 0;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 6px 15px;
+  color: #000;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+    height: 36px;
+    line-height: 36px;
+}
+.profForm .form-container .form-wrapper .form-radio {
+  display: block;
+  /*Hack omdat radius button afvald*/
+  padding-left: 1px;
+}
+.profForm .form-container .form-wrapper .form-radio input {
+  width: auto;
+  margin: 10px 0;
+  margin-right: 10px;
+  float: left;
+}
+.profForm .form-container .form-wrapper .form-radio span {
+  margin-right: 20px;
+  width: auto;
+}
+.profForm .form-container .form-wrapper .form-checkbox {
+  display: block;
+  overflow: hidden;
+}
+.profForm .form-container .form-wrapper .form-checkbox input {
+  float: left;
+  width: auto;
+  margin: 10px 0;
+  margin-right: 10px;
+}
+.profForm .form-container .form-wrapper .form-checkbox span {
+  width: auto;
+}
+.profForm .float-right {
+  float: right !important;
+}
+.profForm .float-left {
+  float: left !important;
+}
+.profForm .width100 {
+  width: 100% !important;
+}
+.profForm .margin-bottom-60 {
+  margin-bottom: 60px !important;
+}
+.profForm .margin-bottom-20 {
+  margin-bottom: 20px !important;
+}
+.profForm .margin-bottom-10 {
+  margin-bottom: 10px !important;
+}
+.profForm .margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+.profForm .margin-top-35 {
+  margin-top: 35px !important;
+}
+.profForm .margin-left-10 {
+  margin-left: 10px !important;
+}
+.profForm .formulierSubmitButton {
+    -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;
+    border: 0px;
+    padding: 6px 15px;
+    background-color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
+a:hover {
+    text-decoration: none;
+}

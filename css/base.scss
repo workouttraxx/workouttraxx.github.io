@@ -1,0 +1,427 @@
+@import 'project';
+
+/* extra tekst en H padding */
+$henkert              : 20px;
+/* container met (gestippelde)border aan onderzijde */
+$henkert-dots-2px-gray :transparent url("/lib/css/images/henkert-dot-2px-gray.png") repeat-x bottom left;
+$henkert-dots-2px-white :transparent url("/lib/css/images/henkert-dot-2px-white.png") repeat-x bottom left;
+$henkert-dots-3px-gray :transparent url("/lib/css/images/henkert-dot-3px-gray.png") repeat-x bottom left;
+$henkert-dots-3px-white :transparent url("/lib/css/images/henkert-dot-3px-white.png") repeat-x bottom left;
+$henkert-dots-4px-gray :transparent url("/lib/css/images/henkert-dot-4px-gray.png") repeat-x bottom left;
+$henkert-dots-4px-white :transparent url("/lib/css/images/henkert-dot-4px-white.png") repeat-x bottom left;
+$henkert-container-padding : 0px 0px 20px 0px;
+$henkert-container-margin : 0px 0px 20px 0px;
+
+@mixin box() {
+  -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}
+@mixin fullrounded($radius: 10px) {
+  -webkit-border-radius: $radius;-moz-border-radius: $radius;border-radius: $radius;
+}
+@mixin toprounded($radius: 10px) {
+  -webkit-border-radius: $radius $radius 0px 0px;-moz-border-radius: $radius $radius 0px 0px;border-radius: $radius $radius 0px 0px;
+}
+@mixin bottomrounded($radius: 10px) {
+  -webkit-border-radius:  0px 0px $radius $radius;-moz-border-radius:  0px 0px $radius $radius;border-radius:  0px 0px $radius $radius;
+}
+
+@mixin ul(){
+  @if $list-paddingtop != null {
+    padding-top: $list-paddingtop;
+  }
+  @if $list-paddingbottom != null {
+    padding-bottom: $list-paddingbottom;
+  }
+  @if $list-paddingleft != null {
+    padding-left: $list-paddingleft;
+  }
+  padding-left:  $list-paddingleft;
+  margin-left:  $list-marginleft;
+  list-style-type: $list-style-type-ul;
+  li {
+    padding-left: $listitem-paddingleft;
+    margin-left: $listitem-marginleft;
+    color:  $listitem-color;
+    font-family: $listitem-fontfamily;
+    font-size: $listitem-fontsize;
+    line-height:  $listitem-lineheight;
+  }
+}
+@mixin ol(){
+  @if $list-paddingtop != null {
+    padding-top: $list-paddingtop;
+  }
+  @if $list-paddingbottom != null {
+    padding-bottom: $list-paddingbottom;
+  }
+  @if $list-paddingleft != null {
+    padding-left: $list-paddingleft;
+  }
+  padding-left:  $list-paddingleft;
+  margin-left:  $list-marginleft;
+  list-style-type: $list-style-type-ol;
+  li {
+    padding-left: $listitem-paddingleft;
+    margin-left: $listitem-marginleft;
+    color:  $listitem-color;
+    font-family: $listitem-fontfamily;
+    font-size: $listitem-fontsize;
+    line-height:  $listitem-lineheight;
+  }
+}
+
+/* kolommmen */
+// plaats .col in de kolommen NA de col-md-3 etc. van Bootstrap. Deze waarden overschrijven Bootstrap waarden
+$col-paddingleft: null !global; // geldt voor alle kolommen
+$col-paddingright: null !global; // geldt voor alle kolommen
+$col-marginleft: null !global;  // geldt voor alle kolommen, zet op 'null !global' bij gebruik Bootstrap !!
+$col-firstcol-paddingleft: null !global; // eventuele override voor eerste kolom
+$col-firstcol-paddingright: null !global; // eventuele override voor eerste kolom
+$col-firstcol-marginleft: null !global; // eventuele override voor eerste kolom, zet op 'null !global' bij gebruik Bootstrap !!
+$col-lastcol-paddingleft: null !global; // eventuele override voor de laatste kolom
+$col-lastcol-paddingright: null !global; // eventuele override voor de laatste kolom
+$col-lastcol-marginleft: null !global; // eventuele override voor de laatste kolom, zet op 'null !global' bij gebruik Bootstrap !!
+$col-verticalpadding: null !global; // vertical padding
+$col-toppadding: null !global; // vertical padding
+$col-bottompadding: null !global; // vertical padding
+
+@mixin col(
+$col-paddingleft:$col-paddingleft,
+$col-firstcol-paddingleft:$col-firstcol-paddingleft,
+$col-lastcol-paddingleft:$col-lastcol-paddingleft,
+$col-paddingright:$col-paddingright,
+$col-firstcol-paddingright:$col-firstcol-paddingright,
+$col-lastcol-paddingright:$col-lastcol-paddingright,
+$col-firstcol-marginleft:$col-firstcol-marginleft,
+$col-lastcol-marginleft:$col-lastcol-marginleft,
+$col-marginleft:$col-marginleft,
+$col-verticalpadding:$col-verticalpadding,
+$col-paddingtop:$col-paddingtop,
+$col-paddingbottom:$col-paddingtop,
+$col-margintop:$col-margintop,
+$col-marginbottom:$col-marginbottom
+
+) {
+  // declaratie voor eerste kolom EN alle kolommen (hier WEL de unieke waardes voor de eerste kolom)
+  @if $col-firstcol-paddingleft != null  {
+    padding-left: $col-firstcol-paddingleft;
+  }
+  @if $col-paddingleft != null and $col-firstcol-paddingleft == null   {
+    padding-left: $col-paddingleft;
+  }
+  @if $col-firstcol-paddingright != null  {
+    padding-right: $col-firstcol-paddingright;
+  }
+  @if $col-paddingright != null and $col-firstcol-paddingright == null   {
+    padding-right: $col-paddingright;
+  }
+  @if $col-marginleft != null  {
+    margin-left: $col-marginleft;
+  }
+  @if $col-firstcol-marginleft != null  {
+    margin-left: $col-firstcol-marginleft;
+  }
+  @if $col-verticalpadding == null {
+    @if $col-toppadding != null {
+      padding-top: $col-paddingtop;
+    }
+    @if $col-bottompadding != null {
+      padding-bottom: $col-paddingbottom;
+    }
+    @if $col-toppadding == null {
+      padding-top: 0;
+    }
+    @if $col-bottompadding == null {
+      padding-bottom: 0;
+    }
+  }
+  @if $col-verticalpadding != null {
+    padding-top: $col-verticalpadding;
+    padding-bottom: $col-verticalpadding;
+  }
+  @if $col-margintop == null {
+    margin-top: 0;
+  }
+  @if $col-margintop != null {
+    margin-top: $col-margintop;
+  }
+  @if $col-marginbottom == null {
+    margin-bottom: 0;
+  }
+  @if $col-marginbottom != null {
+    margin-bottom: $col-marginbottom;
+  }
+
+
+
+  &+& {
+    // declaratie afwijkend voor alle kolommen na de eerste kolom
+    @if $col-paddingleft != null   {
+      padding-left: $col-paddingleft;
+    }
+    @if $col-paddingright != null  {
+      padding-right: $col-paddingright;
+    }
+    @if $col-firstcol-marginleft != null and $col-marginleft != null  {
+      margin-left: $col-marginleft;
+    }
+    @if $col-firstcol-marginleft != null and $col-marginleft == null  {
+      margin-left: 0;
+    }
+    @if $col-firstcol-marginleft == null and $col-marginleft != null  {
+      margin-left: $col-marginleft;
+    }
+    // declaratie afwijkend voor laatste kolom
+    @if $col-lastcol-paddingleft != null  {
+      &:last-child {
+        padding-left: $col-lastcol-paddingleft;
+      }
+    }
+    @if $col-lastcol-paddingright != null  {
+      &:last-child {
+        padding-right: $col-lastcol-paddingright;
+      }
+    }
+    @if $col-marginleft != null and $col-lastcol-marginleft == null  {
+      &:last-child {
+        margin-left: $col-marginleft;
+      }
+    }
+    @if $col-lastcol-marginleft != null  {
+      &:last-child {
+        margin-left: $col-lastcol-marginleft;
+      }
+    }
+  }
+}
+/* background */
+// positioneert éém background-image als achtergrond van een element
+$img : null; // voorbeeld: '/lib/images/dummyfoto01.jpg'
+$img-valign : null; // top
+$img-halign : null; // left
+$img-size : null; // cover
+$img-repeat: null; // x, y, xy, yx
+
+@mixin backgroundimg(
+  $img:$img,
+  $img-valign:$img-valign,
+  $img-halign:$img-halign,
+  $img-size:$img-size,
+  $img-repeat:$img-repeat
+){
+  @if $img != null {
+    background-image: url($img);
+    background-size: $img-size;
+    @if $img-size == cover {
+      background-position: center center;
+    }
+    @if $img-size == null or $img-size == contain {
+      @if $img-halign == null {
+        $img-halign : left
+      }
+      @if $img-valign == null {
+        $img-valign : top
+      }
+      background-position: $img-halign $img-valign;
+      @if $img-repeat != null {
+        @if $img-repeat == x {
+          background-repeat: repeat-x;
+        }
+        @if $img-repeat == y {
+          background-repeat: repeat-y;
+        }
+        @if $img-repeat == xy or $img-repeat == yx  {
+          background-repeat: repeat;
+        }
+      }
+      @if $img-repeat == null {
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @else {}
+}
+
+
+/* background 2 images  */
+// positioneert twee background-images als achtergrond van een element
+$img1 : '/lib/images/back1.png'; // bovenliggende afbeelding, voorbeeld (incl quotes): '/lib/images/back1.png'
+$img2 : '/lib/images/back2.png'; // onderliggende afbeelding, voorbeeld (incl quotes): '/lib/images/back2.png'
+
+$img1-valign : null; // top
+$img1-halign : null; // left
+$img1-size : null; // cover
+$img1-repeat: null; // x, y, xy, yx
+
+$img2-valign : null; // top
+$img2-halign : null; // left
+$img2-size : null; // cover
+$img2-repeat: null; // x, y, xy, yx
+
+@mixin backgroundimg2(
+$img1:$img1,
+$img1-valign:$img1-valign, // 20px, top, middle, bottom
+$img1-halign:$img1-halign, // 20px, left, center, right
+$img1-repeat:$img1-repeat, // x, y, xy, yx
+$img2:$img2,
+$img2-valign:$img2-valign, // 20px, top, middle, bottom
+$img2-halign:$img2-halign, // 20px, left, center, right
+$img2-repeat:$img2-repeat // x, y, xy, yx
+){
+  @if $img1-halign == null {
+    $img1-halign:left
+  }
+  @if $img2-halign == null {
+    $img2-halign:left
+  }
+@if $img1-halign != null {
+    $img1-halign:$img1-halign
+  }
+  @if $img2-halign != null {
+    $img2-halign:$img2-halign
+  }
+  @if $img2-valign == null {
+    $img2-valign:bottom
+  }
+  @if $img1-valign == null {
+    $img1-valign:top
+  }
+  @if $img1-valign != null {
+    $img1-valign:$img1-valign
+  }
+  @if $img2-valign != null {
+    $img2-valign:$img2-valign
+  }
+  @if $img1-repeat == null {
+    $img1-repeat:no-repeat
+  }
+  @if $img1-repeat == x {
+    $img1-repeat:repeat-x
+  }
+  @if $img1-repeat == y {
+    $img1-repeat:repeat-y
+  }
+  @if $img1-repeat == xy or $img1-repeat == yx {
+    $img1-repeat:repeat
+  }
+  @if $img2-repeat == null {
+    $img2-repeat:no-repeat
+  }
+  @if $img2-repeat == x {
+    $img2-repeat:repeat-x
+  }
+  @if $img2-repeat == y {
+    $img2-repeat:repeat-y
+  }
+  @if $img2-repeat == xy or $img2-repeat == yx {
+    $img2-repeat:repeat
+  }
+  @if $img1 != null and $img2 != null  {
+    background: url($img1) $img1-repeat $img1-halign $img1-valign, url($img2) $img2-repeat $img2-halign $img2-valign;
+  }
+  @else {}
+}
+/*
+@include backgroundimg (
+  $img:'/images/etalage.svg', // waarde is verplicht
+  $img-valign: top, // 10px, top
+  $img-halign:center, // 10px, left
+  $img-size:cover, // null, cover, contain
+  $img-repeat:null // x, y, xy
+  );
+*/
+
+
+@mixin p($p-fontfamily:$p-fontfamily,$p-fontsize:$p-fontsize,$p-lineheight:$p-lineheight,$p-fontcolor:$p-fontcolor,$p-margin-bottom:$p-margin-bottom){
+  font-family: $p-fontfamily;
+  font-size: $p-fontsize;
+  color:  $p-fontcolor;
+  line-height:  $p-lineheight;
+  margin-bottom: $p-margin-bottom;
+}
+/* layout bepalend */
+@mixin kader-font(){
+  font-family: $body-fontfamily;
+  font-size: $body-fontsize;
+  line-height: $body-lineheight;
+  color: $body-fontcolor;
+}
+@mixin h1 ($h1-fontsize:$h1-fontsize,$h1-fontweight:$h1-fontweight,$h1-lineheight:$h1-lineheight,$h1-fontcolor:$h1-fontcolor,$h1-margin-top:$h1-margin-top,$h1-margin-bottom:$h1-margin-bottom,$h1-padding-bottom:$h1-padding-bottom) {
+  font-family: $h1-fontfamily;
+  font-size: $h1-fontsize;
+  font-weight: $h1-fontweight;
+  line-height: $h1-lineheight;
+  color: $h1-fontcolor;
+  padding-bottom: $h1-padding-bottom;
+  margin-top: $h1-margin-top;
+  margin-bottom: $h1-margin-bottom;
+  @if not $h1-background {
+    $h1-background :  null !global;// geen variable opgegeven
+  } @else {
+    background : $h1-background;
+  }
+}
+@mixin h2 ($h2-fontsize:$h2-fontsize,$h2-fontweight:$h2-fontweight,$h2-lineheight:$h2-lineheight,$h2-fontcolor:$h2-fontcolor,$h2-margin-top:$h2-margin-top,$h2-margin-bottom:$h2-margin-bottom,$h2-padding-bottom:$h2-padding-bottom) {
+  font-family: $h2-fontfamily;
+  font-size: $h2-fontsize;
+  font-weight: $h2-fontweight;
+  line-height: $h2-lineheight;
+  color: $h2-fontcolor;
+  padding-bottom: $h2-padding-bottom;
+  margin-top: $h2-margin-top;
+  margin-bottom: $h2-margin-bottom;
+  @if not $h2-background {
+    $h2-background :  null !global;// geen variable opgegeven
+  } @else {
+    background : $h2-background;
+  }
+}
+@mixin h3 ($h3-fontsize:$h3-fontsize,$h3-fontweight:$h3-fontweight,$h3-lineheight:$h3-lineheight,$h3-fontcolor:$h3-fontcolor,$h3-margin-top:$h3-margin-top,$h3-margin-bottom:$h3-margin-bottom,$h3-padding-bottom:$h3-padding-bottom) {
+  font-family: $h3-fontfamily;
+  font-size: $h3-fontsize;
+  font-weight: $h3-fontweight;
+  line-height: $h3-lineheight;
+  color: $h3-fontcolor;
+  padding-bottom: $h3-padding-bottom;
+  margin-top: $h3-margin-top;
+  margin-bottom: $h3-margin-bottom;
+  @if not $h3-background {
+    $h3-background :  null !global;// geen variable opgegeven
+  } @else {
+    background : $h3-background;
+  }
+}
+@mixin button ($button-width:$button-width,$button-height:$button-height,$button-border:$button-border,$button-fontcolor:$button-fontcolor,$button-fontfamily:$button-fontfamily,$button-fontsize:$button-fontsize,$button-fontweight:$button-fontweight,$button-bgcolor:$button-bgcolor,$button-background:$button-background){
+  width: $button-width;
+  height:$button-height;
+  border: $button-border;
+  background-color: $button-bgcolor;
+  background-image: $button-background;
+  color: $button-fontcolor;
+  font-family: $button-fontfamily;
+  font-size: $button-fontsize;
+  font-weight: $button-fontweight;
+}
+
+
+
+///* buttons */
+//button {
+//  // declaratie voor alle classes
+//  padding: 10px 20px;
+//  color: white;
+//  font-size: 1.2em;
+//  background: black;
+//  &+& {
+//    // declaratie afwijkend voor classes na eerste class
+//    margin-left: 15px;
+//    background: firebrick;
+//  }
+//}
+
+
+
+
+
+
